@@ -39,10 +39,22 @@
         <a href="#" class="btn">Order Now</a>
     </header>
 
-    <br><Br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 
-    <section class="menu" id="menu">
 
+    <div style="text-align:center; margin:2rem 0;">
+        <button id="btn-smooth" style="background:#6b4f36;color:#fff;padding:12px 22px;border-radius:12px;border:none;cursor:pointer;margin:0 10px;box-shadow:0 6px 24px rgba(107,79,54,0.12);font-weight:700;">
+            Smoothies
+        </button>
+        <button id="btn-special" style="background:transparent;color:#6b4f36;padding:12px 22px;border-radius:12px;border:2px solid #6b4f36;cursor:pointer;margin:0 10px;font-weight:700;">
+            Special Drinks
+        </button>
+        <button id="btn-zar" style="background:transparent;color:#6b4f36;padding:12px 22px;border-radius:12px;border:2px solid #6b4f36;cursor:pointer;margin:0 10px;font-weight:700;">
+            Zaragoza
+        </button>
+    </div>
+
+    <section class="menu" id="smoothies-section">
         <h1 class="heading">Our Products <span>Smoothies</span></h1>
         <div class="box-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
             <a href="#" class="box" style="flex-direction: column;">
@@ -115,8 +127,7 @@
         </div> -->
     </section>
 
-    <section class="menu" id="menu">
-
+    <section class="menu" id="special-section" style="display:none;">
         <h1 class="heading">Our Products <span>Special Drink</span></h1>
         <div class="box-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
             <a href="#" class="box" style="flex-direction: column;">
@@ -196,8 +207,7 @@
         </div> -->
     </section>
 
-        <section class="menu" id="menu">
-
+    <section class="menu" id="zaragoza-section" style="display:none;">
         <h1 class="heading">Our Products <span>Zaragoza</span></h1>
         <div class="box-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
             <a href="#" class="box" style="flex-direction: column;">
@@ -353,6 +363,51 @@
 
     <!-- Custom JS File Link  -->
     <script src="js/script.js"></script>
+
+    <script>
+        const btnSmooth = document.getElementById('btn-smooth');
+        const btnSpecial = document.getElementById('btn-special');
+        const btnZar = document.getElementById('btn-zar');
+        const secSmooth = document.getElementById('smoothies-section');
+        const secSpecial = document.getElementById('special-section');
+        const secZar = document.getElementById('zaragoza-section');
+
+        function activate(btnActive, btn1, btn2) {
+            btnActive.style.background = "#6b4f36";
+            btnActive.style.color = "#fff";
+            btnActive.style.border = "none";
+            btnActive.style.boxShadow = "0 6px 24px rgba(107,79,54,0.12)";
+            btn1.style.background = "transparent";
+            btn1.style.color = "#6b4f36";
+            btn1.style.border = "2px solid #6b4f36";
+            btn1.style.boxShadow = "none";
+            btn2.style.background = "transparent";
+            btn2.style.color = "#6b4f36";
+            btn2.style.border = "2px solid #6b4f36";
+            btn2.style.boxShadow = "none";
+        }
+
+        btnSmooth.onclick = function() {
+            secSmooth.style.display = "block";
+            secSpecial.style.display = "none";
+            secZar.style.display = "none";
+            activate(btnSmooth, btnSpecial, btnZar);
+        };
+        btnSpecial.onclick = function() {
+            secSmooth.style.display = "none";
+            secSpecial.style.display = "block";
+            secZar.style.display = "none";
+            activate(btnSpecial, btnSmooth, btnZar);
+        };
+        btnZar.onclick = function() {
+            secSmooth.style.display = "none";
+            secSpecial.style.display = "none";
+            secZar.style.display = "block";
+            activate(btnZar, btnSmooth, btnSpecial);
+        };
+        // Initial state
+        btnSmooth.click();
+    </script>
 
 </body>
 
