@@ -575,6 +575,9 @@ section {
     html {
         font-size: 50%;
     }
+    .header a {
+        font-size: 30%;
+    }
 
     .home .row .image img {
         height: auto;
