@@ -93,11 +93,13 @@ section {
 .header .logo i {
     padding-left: .5rem;
 }
+
 .header .logo img {
     height: 7rem;
     vertical-align: middle;
     margin-left: .5rem;
 }
+
 .header .navbar a {
     margin: 0 1rem;
     font-size: 1.7rem;
@@ -518,6 +520,10 @@ section {
         font-size: 6rem;
     }
 
+    .header .btn {
+        display: none !important;
+    }
+
     .heading span {
         font-size: 2.3rem;
     }
@@ -575,6 +581,7 @@ section {
     html {
         font-size: 50%;
     }
+
     .header a {
         font-size: 30%;
     }
@@ -582,6 +589,10 @@ section {
     .home .row .image img {
         height: auto;
         width: 100%;
+    }
+
+    .header .btn {
+        display: none !important;
     }
 }
 
