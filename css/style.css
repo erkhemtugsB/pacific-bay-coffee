@@ -588,7 +588,11 @@ section {
 
     .home .row .image img {
         height: auto;
-        width: 100%;
+        width: 65%;
+    }
+
+    .home .row .content {
+        padding-top: 50px;
     }
 
     .header .btn {
