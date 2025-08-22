@@ -63,7 +63,7 @@
         </button>
     </div>
 
-    <section class="menu" id="smoothies-section">
+    <section class="menu" id="smoothies-section" style="display:none;">
         <h1 class="heading">Our Products <span>Smoothies</span></h1>
         <div class="box-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
             <a href="#" class="box" style="flex-direction: column;">
@@ -236,13 +236,13 @@
         </div> -->
     </section>
 
-    <section class="menu" id="zaragoza-section" style="display:none;">
+    <section class="menu" id="zaragoza-section">
         <h1 class="heading">Our Products <span>Zaragoza</span></h1>
         <div class="box-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
             <a href="#" class="box" style="flex-direction: column;">
                 <img src="image/zaragoza/24-hours.png" style="width: 200px; height: 200px;" alt="">
                 <div class="content">
-                    <h3>24 Hours</h3>
+                    <h3>24 hours Cold Brew</h3>
                 </div>
             </a>
 
@@ -277,7 +277,7 @@
             <a href="#" class="box" style="flex-direction: column;">
                 <img src="image/zaragoza/con-panna.png" alt="" style="width: 200px; height: 200px;">
                 <div class="content">
-                    <h3>Con Panna</h3>
+                    <h3>Caramel Con Panna</h3>
                 </div>
             </a>
 
@@ -469,19 +469,17 @@
         const secZar = document.getElementById('zaragoza-section');
         const secSan = document.getElementById('sandwiches-section');
 
-        function activate(btnActive, btn1, btn2) {
-            btnActive.style.background = "#6b4f36";
-            btnActive.style.color = "#fff";
-            btnActive.style.border = "none";
-            btnActive.style.boxShadow = "0 6px 24px rgba(107,79,54,0.12)";
-            btn1.style.background = "transparent";
-            btn1.style.color = "#6b4f36";
-            btn1.style.border = "2px solid #6b4f36";
-            btn1.style.boxShadow = "none";
-            btn2.style.background = "transparent";
-            btn2.style.color = "#6b4f36";
-            btn2.style.border = "2px solid #6b4f36";
-            btn2.style.boxShadow = "none";
+        function activate(active, b2, b3, b4) {
+            [active, b2, b3, b4].forEach(btn => {
+                btn.style.background = "transparent";
+                btn.style.color = "#6b4f36";
+                btn.style.border = "2px solid #6b4f36";
+                btn.style.boxShadow = "none";
+            });
+            active.style.background = "#6b4f36";
+            active.style.color = "#fff";
+            active.style.border = "none";
+            active.style.boxShadow = "0 6px 24px rgba(107,79,54,0.12)";
         }
 
         btnSmooth.onclick = function () {
@@ -496,7 +494,7 @@
             secSpecial.style.display = "block";
             secZar.style.display = "none";
             secSan.style.display = "none";
-            activate(btnSpecial, btnSmooth, btnZar, secSan);
+            activate(btnSpecial, btnSmooth, btnZar, btnSan);
         };
         btnZar.onclick = function () {
             secSmooth.style.display = "none";
@@ -512,8 +510,8 @@
             secSan.style.display = "block";
             activate(btnSan, btnZar, btnSmooth, btnSpecial);
         };
-        // Initial state
-        btnSmooth.click();
+        // Initial state: show Zaragoza first
+        btnZar.click();
     </script>
 
 </body>
